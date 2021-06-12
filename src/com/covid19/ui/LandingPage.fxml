@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1200.0" style="-fx-background-color: #2B2A2A;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.covid19.ui.LandingPageController">
+	<children>
+		<ImageView fitHeight="850.0" fitWidth="1200.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@../../../../Images/landing_page.png" />
+			</image>
+		</ImageView>
+		<Button fx:id="btnGetStarted" layoutX="375.0" layoutY="762.0" mnemonicParsing="false" onAction="#handleGetStarted" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: #444444; -fx-background-radius: 10;" text="Get Started" textFill="WHITE" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="375.0" AnchorPane.rightAnchor="375.0">
+			<font>
+				<Font name="Berlin Sans FB" size="20.0" />
+			</font>
+		</Button>
+	</children>
+</AnchorPane>

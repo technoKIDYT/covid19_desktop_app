@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1200.0"
+	xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.covid19.ui.Controller">
+	<children>
+		<ImageView fitHeight="850.0" fitWidth="1200.0" layoutY="7.0"
+			pickOnBounds="true" preserveRatio="true"
+			AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+			AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<image>
+				<Image url="@../../../../Images/Dashboard.png" />
+			</image>
+		</ImageView>
+		<VBox alignment="CENTER" layoutX="349.0" layoutY="268.0"
+			prefHeight="559.0" prefWidth="824.0" spacing="15.0"
+			style="-fx-background-color: #FFFFFF;">
+			<children>
+				<Label fx:id="lblData" text="India">
+					<font>
+						<Font name="Berlin Sans FB Bold" size="35.0" />
+					</font>
+				</Label>
+				<HBox alignment="CENTER" prefHeight="282.0" prefWidth="824.0"
+					spacing="20.0">
+					<children>
+						<AnchorPane prefHeight="200.0" prefWidth="350.0"
+							style="-fx-background-color: #444444; -fx-background-radius: 15;">
+							<children>
+								<VBox alignment="CENTER" layoutX="50.0" layoutY="25.0"
+									prefHeight="200.0" prefWidth="250.0">
+									<children>
+										<Label text="Confirmed" textFill="WHITE">
+											<font>
+												<Font name="Berlin Sans FB" size="20.0" />
+											</font>
+										</Label>
+										<Label fx:id="lblConfirmed" alignment="CENTER"
+											contentDisplay="CENTER" prefHeight="48.0" prefWidth="253.0"
+											text="100" textFill="WHITE">
+											<font>
+												<Font name="Berlin Sans FB Bold" size="35.0" />
+											</font>
+										</Label>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+						<AnchorPane prefHeight="200.0" prefWidth="350.0"
+							style="-fx-background-color: #444444; -fx-background-radius: 15;">
+							<children>
+								<VBox alignment="CENTER" layoutX="50.0" layoutY="25.0"
+									prefHeight="200.0" prefWidth="250.0">
+									<children>
+										<Label text="Recovered" textFill="#97eb60">
+											<font>
+												<Font name="Berlin Sans FB" size="20.0" />
+											</font>
+										</Label>
+										<Label fx:id="lblRecovered" alignment="CENTER"
+											contentDisplay="CENTER" prefHeight="48.0" prefWidth="253.0"
+											text="100" textFill="#96eb5f">
+											<font>
+												<Font name="Berlin Sans FB Bold" size="35.0" />
+											</font>
+										</Label>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" prefHeight="277.0" prefWidth="824.0"
+					spacing="20.0">
+					<children>
+						<AnchorPane prefHeight="200.0" prefWidth="350.0"
+							style="-fx-background-color: #444444; -fx-background-radius: 15;">
+							<children>
+								<VBox alignment="CENTER" layoutX="50.0" layoutY="23.0"
+									prefHeight="200.0" prefWidth="250.0">
+									<children>
+										<Label text="Critical" textFill="#e1eb28">
+											<font>
+												<Font name="Berlin Sans FB" size="20.0" />
+											</font>
+										</Label>
+										<Label fx:id="lblCritical" alignment="CENTER"
+											contentDisplay="CENTER" prefHeight="48.0" prefWidth="252.0"
+											text="100" textFill="#d6e025">
+											<font>
+												<Font name="Berlin Sans FB Bold" size="35.0" />
+											</font>
+										</Label>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+						<AnchorPane prefHeight="200.0" prefWidth="350.0"
+							style="-fx-background-color: #444444; -fx-background-radius: 15;">
+							<children>
+								<VBox alignment="CENTER" layoutX="50.0" layoutY="23.0"
+									prefHeight="200.0" prefWidth="250.0">
+									<children>
+										<Label text="Death" textFill="#e40a44">
+											<font>
+												<Font name="Berlin Sans FB" size="20.0" />
+											</font>
+										</Label>
+										<Label fx:id="lblDeath" alignment="CENTER"
+											contentDisplay="CENTER" prefHeight="48.0" prefWidth="258.0"
+											text="100" textFill="#e30a44">
+											<font>
+												<Font name="Berlin Sans FB Bold" size="35.0" />
+											</font>
+										</Label>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+					</children>
+				</HBox>
+			</children>
+			<padding>
+				<Insets bottom="25.0" top="25.0" />
+			</padding>
+		</VBox>
+		<VBox fx:id="vboxOpt" alignment="CENTER" layoutX="30.0"
+			layoutY="301.0" prefHeight="493.0" prefWidth="332.0" spacing="25.0"
+			style="-fx-background-radius: 15; -fx-background-color: #EA5569;">
+			<children>
+				<ComboBox fx:id="drpCountry" onAction="#loadApi"
+					prefHeight="50.0" prefWidth="250.0" promptText="Select Country"
+					style="-fx-background-color: #EA5569; -fx-text-fill: #FFFFFF;" />
+				<ComboBox fx:id="drpCountryCode" onAction="#loadApi"
+					prefHeight="50.0" prefWidth="250.0"
+					promptText="Select Country Code"
+					style="-fx-background-color: #EA5569; -fx-text-fill: #FFFFFF;" />
+				<DatePicker fx:id="inpDate" onAction="#loadApi"
+					prefHeight="50.0" prefWidth="250.0" promptText="Select Date" />
+				<Button fx:id="btnSubmit" alignment="CENTER"
+					mnemonicParsing="false" onAction="#loadApi" prefHeight="50.0"
+					prefWidth="250.0"
+					style="-fx-background-color: #FC7592; -fx-background-radius: 15;"
+					text="Submit" textFill="WHITE">
+					<font>
+						<Font name="Berlin Sans FB Bold" size="18.0" />
+					</font>
+				</Button>
+			</children>
+		</VBox>
+		<Label alignment="CENTER" contentDisplay="CENTER"
+			layoutX="321.0" layoutY="75.0" prefHeight="69.0" prefWidth="558.0"
+			text="Corona Tracker" textFill="#ea5569">
+			<font>
+				<Font name="Berlin Sans FB Bold" size="50.0" />
+			</font>
+		</Label>
+		<Label alignment="CENTER" contentDisplay="CENTER"
+			layoutX="321.0" layoutY="119.0" prefHeight="69.0" prefWidth="558.0"
+			text="World Wide" textFill="#ea5569">
+			<font>
+				<Font name="Berlin Sans FB Bold" size="25.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>
